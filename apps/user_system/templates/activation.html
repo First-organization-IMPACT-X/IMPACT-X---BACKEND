@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Activation email </title>
+</head>
+<body>
+
+    {% load static %}
+   
+    {% load i18n %}
+
+    {% block subject %}
+
+    {% blocktrans %}Account activation on {{ site_name }}{% endblocktrans %}
+    {% endblock subject %}
+
+    {% block text_body %}
+    {% blocktrans %}You're receiving this email because you need to finish activation process on {{ site_name }}.{% endblocktrans %}
+
+    {% trans "Please go to the following page to activate account:" %}
+    {{ protocol }}://{{ domain }}/{{ url|safe }}
+
+    {% trans "Thanks for using our site!" %}
+
+    {% blocktrans %}The {{ site_name }} team{% endblocktrans %}
+    {% endblock text_body %}
+
+    {% block html_body %}
+    <div>
+
+        <h1 style ="font-size: 35px; margin :0px; margin-bottom : 8px "> IMPACT X </h1>
+
+        <h3 style = "color: rgb(56, 168, 56);font-size: 22px; margin : 0px">
+            Free live webinar 
+        </h3> 
+
+        <p style = "font-size : 18px;margin : 0px"> 
+            !Bienvenido a IMPACT X!. Estamos emocionados de tenerte como parte de nuestra comunidad. 
+        </p>
+
+        <p style = "font-size : 18px; margin : 0px;">
+            {% blocktrans %}Usted esta recibiendo este correo electrónico porque necesita finalizar el proceso de activación.{% endblocktrans %}
+        </p>
+
+        <p style = "font-size : 19px; font-weight: bold;">
+            Por favor dar click en el siguiente boton para activar su cuenta
+        </p>
+
+        <p style = "font-size : 20px" >
+            ⬇️⬇️⬇️
+        </p>
+
+        <button style = "font-size : 24px; background: rgb(70, 187, 70); padding: 10px 33px; border: none; border-radius: 12px;">
+            <a style = "color: white; text-decoration: none;" href="{{ protocol }}://{{ domain }}/#/{{ url|safe }}"> Activar </a>
+        </button>
+
+        <p style = "font-size : 20px">
+            ⬆️⬆️⬆️
+        </p>
+
+        <div class="container">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/User_icon_2.svg/640px-User_icon_2.svg.png" alt="img" width="35%">
+        </div>
+
+    </div>
+
+    <div style = "margin-top: 30px">
+        <h3> Gracias por utilizar nuestro sitio </h3>
+        <h2 style = "color: rgb(56, 168, 56);"> El equipo de IMPACT X </h2>
+    </div>
+    
+    {% endblock html_body %}
+
+</body>
+</html>

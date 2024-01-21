@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Confirmation </title>
+</head>
+<body>
+
+    {% load i18n %}
+
+    {% block subject %}
+    {% blocktrans %}{{ site_name }} - Your account has been successfully created and activated!{% endblocktrans %}
+    {% endblock %}
+
+    {% block text_body %}
+    {% trans "Your account has been created and is ready to use!" %}
+
+    {% trans "Thanks for using our site!" %}
+
+    {% blocktrans %}The {{ site_name }} team{% endblocktrans %}
+    {% endblock text_body %}
+
+    {% block html_body %}
+
+    <h1 style ="font-size: 35px; margin :0px; margin-bottom : 8px "> IMPACT X </h1>
+
+    <h3 style = "color: rgb(56, 168, 56);font-size: 22px; margin : 0px">
+        Free live webinar 
+    </h3> 
+
+    <p style = "font-size : 18px;margin : 0px"> ¡Su cuenta ha sido creada y está lista para usar!  </p>
+
+    <p style = "font-size : 18px; margin : 0px"> Gracias por usar nuestro sitio </p>
+
+    <p style = "font-size : 40px;"> 🛠️🛠️🛠️ </p>
+
+    <div class="container">
+        <img src="https://cdn-icons-png.flaticon.com/512/3043/3043893.png" alt="img" width="35%">
+    </div>
+    
+    <div style = "margin-top: 35px">
+        <h2 style = "color: rgb(56, 168, 56);"> El equipo de IMPACT X </h2>
+    </div>
+
+    {% endblock html_body %}
+
+</body>
+</html>
